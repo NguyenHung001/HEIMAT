@@ -231,6 +231,7 @@ a {
         margin-top: 25px;
         .recommend__left {
             width: 40%;
+            margin-right: 70px;
             img {
                 width: 425px;
                 height: auto;
@@ -256,24 +257,39 @@ a {
         }
         .recommend__right {
             width: 60%;
+            @include flexBox(center, flex-start);
+            flex-direction: column;
+            gap: 20px;
             .recommend__item {
                 display: flex;
                 img {
                     object-fit: cover;
-                    flex: 1;
+                    display: block;
+                    margin-right: 30px;
                 }
                 .img__content {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
                     .img__data {
                         @include imgData;
+                        p {
+                            margin-bottom: 0;
+                        }
                     }
                     h5 {
                         @include styleText(500, 18px, 21px, #000000);
+                        margin-bottom: 0;
                     }
                     p {
                         @include styleText(400, 14px, 15px, rgba(0, 0, 0, 0.65));
+                        margin-bottom: 20px;
                     }
                     .recommend__user {
                         @include user;
+                        p {
+                            margin-bottom: 0;
+                        }
                     }
                 }
             }
