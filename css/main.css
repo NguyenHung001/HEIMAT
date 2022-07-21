@@ -34,6 +34,7 @@ a:hover {
   line-height: 38px;
   letter-spacing: 0.29em;
   color: #303030;
+  margin-bottom: 0;
 }
 .header__top .container .search {
   display: flex;

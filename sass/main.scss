@@ -25,6 +25,7 @@ a {
         .heimat {
             h1 {
                 @include heimat;
+                margin-bottom: 0;
             }
         }
         .search {
