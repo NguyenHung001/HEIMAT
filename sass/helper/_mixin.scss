@@ -1,0 +1,51 @@
+@mixin flexBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin heimat {
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 38px;
+    letter-spacing: 0.29em;
+    color: #303030;
+}
+
+@mixin styleText($fw, $fs, $lh, $color) {
+    font-weight: $fw;
+    font-size: $fs;
+    line-height: $lh;
+    color: $color;
+}
+
+@mixin flexBox($al, $jt) {
+    display: flex;
+    align-items: $al;
+    justify-content: $jt;
+}
+
+@mixin user {
+    @include flexBox(center, start);
+    img {
+        width: $sz-avt;
+        margin-right: 18px;
+    }
+    p {
+        @include styleText(500, 16px, 19px, rgba(0, 0, 0, 0.7))
+    }
+}
+
+@mixin imgData {
+    @include flexBox(center, start);
+    h6 {
+        @include styleText(400, 18px, 21px, #000000);
+        margin-bottom: 0;
+        padding-right: 10px;
+        border-right: 1px solid #000000;
+        margin-right: 15px;
+    }
+    p {
+        @include styleText(400, 14px, 16px, rgba(0, 0, 0, 0.56))
+    }
+}

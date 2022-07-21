@@ -1,0 +1,282 @@
+@import "./helper/variable";
+
+@import "./helper/mixin";
+
+@import "./base/reset";
+
+//*==================================>
+
+p {
+    margin-bottom: 0;
+}
+a {
+    text-decoration: none;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+// *==========HEADER==========
+.header__top {
+    background-color: #CCABDB;
+    .container {
+        @include flexBox(center, space-between);
+        padding: 10px 0;
+        .heimat {
+            h1 {
+                @include heimat;
+            }
+        }
+        .search {
+            @include flexBox(center, space-between);
+            gap: 40px;
+            padding: 15px 40px;
+            border-left:  1px solid #D4D4D4;
+            border-right:  1px solid #D4D4D4;
+            .header__date {
+                p {
+                    @include styleText(400, 18px, 27px, #828282);
+                }
+            }
+            .header__search {
+                position: relative;
+                input {
+                    width: 293px;
+                    height: 33px;
+                    background: rgba(255, 221, 255, 0.5);
+                    border-radius: 30px;
+                    outline: 0;
+                    border: 0;
+                    padding: 0 15px;
+                }
+                i {
+                    position: absolute;
+                    right: 15px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    font-size: 22px;
+                    color: rgba(0, 0, 0, 0.48);;
+                }
+            }
+        }
+        .header__user {
+            a:last-of-type, a:nth-of-type(2){
+                margin-left: 30px;
+            }
+        }
+    }
+}
+.header__bottom {
+    background-color: #FFDDFF;
+    margin-bottom: 20px;
+    .container {
+        @include flexBox(center, space-between);
+        padding: 8px 0;
+        .featured__member {
+            p {
+                @include styleText(500, 18px, 21px, #595959);
+            }
+        }
+        .featured__list {
+            a {
+                @include styleText(500, 18px, 21px, #828282);
+                margin: 0 13px;
+            }
+            i {
+                font-size: 18px;
+                color: #828282;
+            }
+            i:first-of-type {
+                margin-right: 25px;
+            }
+            i:last-of-type {
+                margin-left: 25px;
+            }
+        }
+    }
+}
+
+// *=========ACTIONS=========
+.actions {
+    height: 242px;
+    .actions__left {
+        .story {
+            .story__item:first-of-type {
+                width: 70px;
+                height: 98px;
+                background: #FFEEFF;
+                border: 1px solid #EE17EE;
+                border-radius: 10px;
+                @include flexBox(center, space-evenly);
+                flex-direction: column;
+                p {
+                    @include styleText(400, 10px, 15px, #E783FC);
+                }
+            }
+            .story__item {
+                position: relative;
+                .nameInfo {
+                    position: absolute;
+                    bottom: 5px;
+                    left: 5px;
+                    @include styleText(600, 10px, 15px, #FFFAFA);
+                }
+            }
+            .owl-item {
+                width: 86px !important;
+            }
+        }
+        .post {
+            border: 1px solid #FFDDFF;
+            border-radius: 10px;
+            background: rgba(255, 221, 255, 0.5);
+            margin-top: 20px;
+            flex-direction: column;
+            .post__top {
+                height: 50%;
+                border-bottom: 1px solid #FFDDFF;
+                padding: 7px 25px;
+                input {
+                    width: 467px;
+                    height: 37px;
+                    border-radius: 20px;
+                    background: rgba(255, 221, 255, 0.65);
+                    outline: 0;
+                    border: 0;
+                    margin-left: 25px;
+                    margin-top: 5px;
+                    padding: 0 15px;
+                }
+            }
+            .post__bottom {
+                height: 50%;
+                padding: 14px 25px;
+                padding-right: 60px;
+                @include flexBox(center, space-between);
+                .post__item {
+                    @include flexBox(center, space-between);
+                    gap: 10px;
+                    p {
+                        @include styleText(500, 12px, 14px, rgba(0, 0, 0, 0.51));
+                    }
+                }
+            }
+        }
+    }
+    .actions__right {
+        width: 100%;
+        height: 242px;
+        background-color: #FFEEFF;
+        border: 1px solid #FFDDFF;
+        border-radius: 10px;
+        padding: 13px 25px;
+        .discover__title {
+            h3 {
+                @include styleText(600, 20px, 23px, #706970);
+                margin-left: 22px;
+                margin-bottom: 10px;
+            }
+        }
+        .discover__content {
+            .discover__item {
+                background-color: #FFE5FF;
+                border-radius: 10px;
+                border: 1px solid #FFDDFF;
+                padding: 8px 15px;
+                @include flexBox(center, space-between);
+                margin-bottom: 10px;
+                .discover__avt {
+                    img {
+                        width: $sz-avt;
+                    }
+                }
+                .discover__name {
+                    flex: 1;
+                    margin-left: 20px;
+                    h5 {
+                        @include styleText(500, 14px, 16px, rgba(0, 0, 0, 0.7));
+                        margin-bottom: 0;
+                    }
+                    p {
+                        @include styleText(500, 10px, 12px, rgba(0, 0, 0, 0.42));
+                    }
+                }
+                .discover__follow {
+                    button {
+                        @include styleText(500, 12px, 14px, rgba(0, 0, 0, 0.42));
+                        border: 0;
+                        outline: none;
+                        background-color: #84BECE;
+                        padding: 7px 20px;
+                        border-radius: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// *=========RECOMMEND=========
+.recommend {
+    margin-top: 50px;
+    .recommend__title {
+        h3 {
+            @include styleText(600, 20px, 23px, rgba(0, 0, 0, 0.64));
+            padding-left: 20px;
+            border-left: 3px solid rgba(0, 0, 0, 0.64);
+        }
+    }
+    .recommend__content {
+        display: flex;
+        margin-top: 25px;
+        .recommend__left {
+            width: 40%;
+            img {
+                width: 425px;
+                height: auto;
+            }
+            .img__data {
+                @include imgData;
+                margin: 10px 0;
+            }
+            .img__content {
+                margin: 20px 0;
+                .img__title {
+                    h3 {
+                        @include styleText(400, 20px, 23px, #000000);
+                    }
+                    p {
+                        @include styleText(400, 16px, 19px, rgba(0, 0, 0, 0.65));
+                    }
+                }
+            }
+            .recommend__user {
+                @include user;
+            }
+        }
+        .recommend__right {
+            width: 60%;
+            .recommend__item {
+                display: flex;
+                img {
+                    object-fit: cover;
+                    flex: 1;
+                }
+                .img__content {
+                    .img__data {
+                        @include imgData;
+                    }
+                    h5 {
+                        @include styleText(500, 18px, 21px, #000000);
+                    }
+                    p {
+                        @include styleText(400, 14px, 15px, rgba(0, 0, 0, 0.65));
+                    }
+                    .recommend__user {
+                        @include user;
+                    }
+                }
+            }
+        }
+    }
+}
